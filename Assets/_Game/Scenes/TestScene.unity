@@ -122,6 +122,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &108633691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 108633693}
+  - component: {fileID: 108633692}
+  m_Layer: 0
+  m_Name: MatchFinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &108633692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108633691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc7b766db607c1469a5bbb92d33f762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &108633693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108633691}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &328535357
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,6 +204,7 @@ MonoBehaviour:
   - {fileID: 6157432946237737946, guid: 11cd02d3a95251d4ebdfdeec30030b59, type: 3}
   - {fileID: 3054133553708483512, guid: 574d5a89e5fdd214195f7decd4d14c92, type: 3}
   - {fileID: 4535848690909990601, guid: 795814c9f46fc1d4088ef5374d963156, type: 3}
+  gemSpeed: 7
 --- !u!4 &328535359
 Transform:
   m_ObjectHideFlags: 0
@@ -273,3 +318,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 1949606420}
   - {fileID: 328535359}
+  - {fileID: 108633693}

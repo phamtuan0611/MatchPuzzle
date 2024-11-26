@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posIndex: {x: 0, y: 0}
   board: {fileID: 0}
+  type: 3
 --- !u!61 &-6232408938432357983
 BoxCollider2D:
   m_ObjectHideFlags: 0

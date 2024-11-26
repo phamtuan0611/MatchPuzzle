@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Gem : MonoBehaviour
 {
-    //[HideInInspector] 
+    [HideInInspector]
     public Vector2Int posIndex;
-    //[HideInInspector] 
+    [HideInInspector]
     public Board board;
 
     private Vector2 firstTouchPosition;
@@ -17,7 +17,14 @@ public class Gem : MonoBehaviour
 
     private Gem otherGem;
 
-    // Start is called before the first frame update
+    public enum GemType { blue, green, orange, purple, red }
+    public GemType type;
+
+    public bool isMatched;
+
+    private Vector2Int previousPos;
+
+    // Start is called before the first frame update    
     void Start()
     {
 
@@ -40,8 +47,11 @@ public class Gem : MonoBehaviour
         {
             mousePressed = false;
 
-            finalTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            CalculateAngle();
+            if (board.currentState == Board.BoardState.move)
+            {
+                finalTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                CalculateAngle();
+            }
         }
     }
 
@@ -53,10 +63,13 @@ public class Gem : MonoBehaviour
 
     private void OnMouseDown()
     {
-        //Chuyen tu Toa do man hinh sang Toa do the gioi Game
-        //Toa do man hinh la 1920x1080
-        firstTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePressed = true;
+        if (board.currentState == Board.BoardState.move)
+        {
+            //Chuyen tu Toa do man hinh sang Toa do the gioi Game
+            //Toa do man hinh la 1920x1080
+            firstTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePressed = true;
+        }
     }
 
     private void CalculateAngle()
@@ -75,6 +88,8 @@ public class Gem : MonoBehaviour
 
     private void MovePieces()
     {
+        previousPos = posIndex;
+
         if (swipeAngle < 45 && swipeAngle > -45 && posIndex.x < board.width - 1)
         {
             otherGem = board.allGems[posIndex.x + 1, posIndex.y];
@@ -102,5 +117,36 @@ public class Gem : MonoBehaviour
 
         board.allGems[posIndex.x, posIndex.y] = this;
         board.allGems[otherGem.posIndex.x, otherGem.posIndex.y] = otherGem;
+
+        StartCoroutine(CheckMoveCo());
+    }
+
+    public IEnumerator CheckMoveCo()
+    {
+        board.currentState = Board.BoardState.wait;
+
+        yield return new WaitForSeconds(0.5f);
+
+        board.matchFind.FindAllMatches();
+
+        if (otherGem != null)
+        {
+            if (!isMatched && !otherGem.isMatched)
+            {
+                otherGem.posIndex = posIndex;
+                posIndex = previousPos;
+
+                board.allGems[posIndex.x, posIndex.y] = this;
+                board.allGems[otherGem.posIndex.x, otherGem.posIndex.y] = otherGem;
+
+                yield return new WaitForSeconds(0.5f);
+
+                board.currentState = Board.BoardState.move;
+            }
+            else
+            {
+                board.DestroyMatches();
+            }
+        }
     }
 }
