@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Board : MonoBehaviour
 {
-    [SerializeField] private int width;
-    [SerializeField] private int height;
+    public int width;
+    public int height;
 
-    [SerializeField] private GameObject bgTilePrefab;
+    public GameObject bgTilePrefab;
 
-    [SerializeField] private Gem[] gems;
+    public Gem[] gems;
 
-    [SerializeField] private Gem[,] allGems;
+    public Gem[,] allGems;
 
+    public float gemSpeed;
 
     // Start is called before the first frame update
     void Start()
