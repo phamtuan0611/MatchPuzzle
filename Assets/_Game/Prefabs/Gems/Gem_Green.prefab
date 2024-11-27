@@ -101,6 +101,8 @@ MonoBehaviour:
   posIndex: {x: 0, y: 0}
   board: {fileID: 0}
   type: 1
+  isMatched: 0
+  destroyEffect: {fileID: 4790312762633365421, guid: cce899f8a745b6843acbc5a2ce83f0db, type: 3}
 --- !u!61 &-8082867482369766141
 BoxCollider2D:
   m_ObjectHideFlags: 0
