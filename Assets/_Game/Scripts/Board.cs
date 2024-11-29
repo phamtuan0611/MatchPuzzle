@@ -24,9 +24,11 @@ public class Board : MonoBehaviour
     public Gem bomb;
     public float bombChance = 2f;
 
+    public RoundManager roundManager;
     private void Awake()
     {
         matchFind = FindObjectOfType<MatchFinder>();
+        roundManager = FindObjectOfType<RoundManager>();
     }
     // Start is called before the first frame update
     void Start()
@@ -133,6 +135,8 @@ public class Board : MonoBehaviour
         {
             if (matchFind.currentMatches[i] != null)
             {
+                ScoreCheck(matchFind.currentMatches[i]);
+
                 DestroyMatchedGemAt(matchFind.currentMatches[i].posIndex);
             }
         }
@@ -269,5 +273,10 @@ public class Board : MonoBehaviour
 
             StartCoroutine(FillBoardCo());
         }
+    }
+
+    public void ScoreCheck(Gem gemToCheck)
+    {
+        roundManager.roundScore += gemToCheck.scoreValue;
     }
 }

@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
     public TMP_Text timeText;
     public TMP_Text scoreText;
 
+    public GameObject roundOver;
+
     // Start is called before the first frame update
     void Start()
     {
