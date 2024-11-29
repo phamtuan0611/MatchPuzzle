@@ -14,6 +14,8 @@ public class RoundManager : MonoBehaviour
     public float displayScore;
     public float scoreSpeed;
 
+    public int scoreTarget1, scoreTarget2, scoreTarget3;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -51,5 +53,27 @@ public class RoundManager : MonoBehaviour
     private void WinCheck()
     {
         uiMan.roundOver.SetActive(true);
+
+        uiMan.winScore.text = roundScore.ToString();
+
+        if (roundScore >= scoreTarget3)
+        {
+            uiMan.winText.text = "Congratulations! You earned 3 stars!";
+            uiMan.winStars3.SetActive(true);
+        }
+        else if (roundScore >= scoreTarget2)
+        {
+            uiMan.winText.text = "Congratulations! You earned 2 stars!";
+            uiMan.winStars2.SetActive(true);
+        }
+        else if (roundScore >= scoreTarget1)
+        {
+            uiMan.winText.text = "Congratulations! You earned 1 stars!";
+            uiMan.winStars1.SetActive(true);
+        }
+        else
+        {
+            uiMan.winText.text = "Oh no! No stars for you! Try again?";
+        }
     }
 }
