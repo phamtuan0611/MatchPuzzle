@@ -28,15 +28,22 @@ public class Board : MonoBehaviour
 
     private float bonusMulti;
     public float bonusAmount = 0.5f;
+
+    private BoardLayOut boardLayOut;
+    private Gem[,] layoutStore;
+
     private void Awake()
     {
         matchFind = FindObjectOfType<MatchFinder>();
         roundManager = FindObjectOfType<RoundManager>();
+        boardLayOut = GetComponent<BoardLayOut>();
     }
     // Start is called before the first frame update
     void Start()
     {
         allGems = new Gem[width, height];
+
+        layoutStore = new Gem[width, height];
 
         Setup();
     }
@@ -53,6 +60,11 @@ public class Board : MonoBehaviour
 
     private void Setup()
     {
+        if (boardLayOut != null)
+        {
+            layoutStore = boardLayOut.GetLayOut();
+        }
+
         for (int x = 0; x < width; x++)
         {
             for (int y = 0; y < height; y++)
@@ -64,17 +76,24 @@ public class Board : MonoBehaviour
                 bgTile.transform.parent = transform; //Dat Parent la GameObject Board trong Hierarchy
                 bgTile.name = "BG Tile - " + x + ", " + y;
 
-                int gemToUse = Random.Range(0, gems.Length); //Lay ngau nhien Gem tu mang gems
-
-                int iterations = 0;
-                while (MatchesAt(new Vector2Int(x, y), gems[gemToUse]) && iterations < 100)
+                if (layoutStore[x, y] != null)
                 {
-                    //Kiem tra xem khi bat dau co cai nao bi AN khong, neu co thi sinh lai gem
-                    gemToUse = Random.Range(0, gems.Length);
-                    iterations++;
+                    SpawnGem(new Vector2Int(x, y), layoutStore[x, y]);
                 }
+                else
+                {
+                    int gemToUse = Random.Range(0, gems.Length); //Lay ngau nhien Gem tu mang gems
 
-                SpawnGem(new Vector2Int(x, y), gems[gemToUse]);
+                    int iterations = 0;
+                    while (MatchesAt(new Vector2Int(x, y), gems[gemToUse]) && iterations < 100)
+                    {
+                        //Kiem tra xem khi bat dau co cai nao bi AN khong, neu co thi sinh lai gem
+                        gemToUse = Random.Range(0, gems.Length);
+                        iterations++;
+                    }
+
+                    SpawnGem(new Vector2Int(x, y), gems[gemToUse]);
+                }
             }
         }
     }
