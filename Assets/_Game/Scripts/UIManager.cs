@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -14,6 +15,17 @@ public class UIManager : MonoBehaviour
 
     public GameObject roundOver;
 
+    private Board theBoard;
+
+    public string levelSelect;
+
+    public GameObject pauseScreen;
+
+    private void Awake()
+    {
+        theBoard = FindObjectOfType<Board>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +37,44 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseUnpause();
+        }
+    }
+
+    public void PauseUnpause()
+    {
+        if (!pauseScreen.activeInHierarchy)
+        {
+            pauseScreen.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            pauseScreen.SetActive(false);
+            Time.timeScale = 1f;
+        }
+    }
+
+    public void ShuffleBoard()
+    {
+        theBoard.ShuffleBoard();
+    }
+
+    public void QuitGaem()
+    {
+        Application.Quit();
+    }
+
+    public void GoToSelectLevel()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(levelSelect);
+    }
+
+    public void TryAgain()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

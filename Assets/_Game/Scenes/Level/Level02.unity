@@ -294,11 +294,11 @@ MonoBehaviour:
     - {fileID: 0}
   - gemsInRow:
     - {fileID: 0}
-    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
-    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
-    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
-    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
-    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
+    - {fileID: 6471597172337383717, guid: fd56793712651de498e943d5c7319d55, type: 3}
+    - {fileID: 6157432946237737946, guid: 11cd02d3a95251d4ebdfdeec30030b59, type: 3}
+    - {fileID: 3054133553708483512, guid: 574d5a89e5fdd214195f7decd4d14c92, type: 3}
+    - {fileID: 4535848690909990601, guid: 795814c9f46fc1d4088ef5374d963156, type: 3}
     - {fileID: 0}
 --- !u!1001 &440514636
 PrefabInstance:
