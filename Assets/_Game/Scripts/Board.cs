@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -79,6 +79,7 @@ public class Board : MonoBehaviour
                 if (layoutStore[x, y] != null)
                 {
                     SpawnGem(new Vector2Int(x, y), layoutStore[x, y]);
+                    //DestroyMatches();
                 }
                 else
                 {
@@ -276,42 +277,53 @@ public class Board : MonoBehaviour
 
     public void ShuffleBoard()
     {
-        if (currentState != BoardState.wait)
+        float count = 0;
+        if (count < 3)
         {
-            currentState = BoardState.wait;
-
-            List<Gem> gemsFromBoard = new List<Gem>();
-
-            for (int x = 0; x < width; x++)
+            count++;
+            Debug.Log(count);
+            if (currentState != BoardState.wait)
             {
-                for (int y = 0; y < height; y++)
-                {
-                    gemsFromBoard.Add(allGems[x, y]);
-                    allGems[x, y] = null;
-                }
-            }
+                currentState = BoardState.wait;
 
-            for (int x = 0; x < width; x++)
-            {
-                for (int y = 0; y < height; y++)
-                {
-                    int gemToUse = Random.Range(0, gemsFromBoard.Count);
+                List<Gem> gemsFromBoard = new List<Gem>();
 
-                    int iterations = 0;
-                    while (MatchesAt(new Vector2Int(x, y), gemsFromBoard[gemToUse]) && iterations < 100 && gemsFromBoard.Count > 1)
+                for (int x = 0; x < width; x++)
+                {
+                    for (int y = 0; y < height; y++)
                     {
-                        gemToUse = Random.Range(0, gemsFromBoard.Count);
-                        iterations++;
+                        gemsFromBoard.Add(allGems[x, y]);
+                        allGems[x, y] = null;
                     }
-
-                    gemsFromBoard[gemToUse].SetupGem(new Vector2Int(x, y), this);
-                    allGems[x, y] = gemsFromBoard[gemToUse];
-                    gemsFromBoard.RemoveAt(gemToUse);
                 }
-            }
 
-            StartCoroutine(FillBoardCo());
+                for (int x = 0; x < width; x++)
+                {
+                    for (int y = 0; y < height; y++)
+                    {
+                        int gemToUse = Random.Range(0, gemsFromBoard.Count);
+
+                        int iterations = 0;
+                        while (MatchesAt(new Vector2Int(x, y), gemsFromBoard[gemToUse]) && iterations < 100 && gemsFromBoard.Count > 1)
+                        {
+                            gemToUse = Random.Range(0, gemsFromBoard.Count);
+                            iterations++;
+                        }
+
+                        gemsFromBoard[gemToUse].SetupGem(new Vector2Int(x, y), this);
+                        allGems[x, y] = gemsFromBoard[gemToUse];
+                        gemsFromBoard.RemoveAt(gemToUse);
+                    }
+                }
+
+                StartCoroutine(FillBoardCo());
+            }
         }
+        else
+        {
+            return;
+        }
+        
     }
 
     public void ScoreCheck(Gem gemToCheck)

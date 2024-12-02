@@ -134,7 +134,7 @@ public class MatchFinder : MonoBehaviour
         {
             for(int y = bombPos.y - theBomb.blastSize; y <= bombPos.y + theBomb.blastSize; y++)
             {
-                if (x >= 0 && x < board.width && y > 0 && y < board.height)
+                if (x >= 0 && x < board.width && y >= 0 && y < board.height)
                 {
                     if (board.allGems[x, y] != null)
                     {
@@ -145,6 +145,6 @@ public class MatchFinder : MonoBehaviour
             }
         }
 
-        currentMatches = currentMatches.Distinct().ToList();
+        currentMatches = currentMatches.Distinct().ToList(); //Loai bo cac gia tri LAP roi dua lai ve List
     }
 }

@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
     public string levelSelect;
 
     public GameObject pauseScreen;
+    private int count = 0;
 
     private void Awake()
     {
@@ -59,7 +60,16 @@ public class UIManager : MonoBehaviour
 
     public void ShuffleBoard()
     {
-        theBoard.ShuffleBoard();
+        if (count < 3)
+        {
+            count++;
+            Debug.Log(count);
+            theBoard.ShuffleBoard();
+        }
+        else
+        {
+            return;
+        }
     }
 
     public void QuitGaem()

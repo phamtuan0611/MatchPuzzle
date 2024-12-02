@@ -273,33 +273,33 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
+    - {fileID: 6471597172337383717, guid: fd56793712651de498e943d5c7319d55, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+  - gemsInRow:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 6471597172337383717, guid: fd56793712651de498e943d5c7319d55, type: 3}
+    - {fileID: 6471597172337383717, guid: fd56793712651de498e943d5c7319d55, type: 3}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
   - gemsInRow:
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - gemsInRow:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 1700410402662398526, guid: 13f827c3bd21b9048affe09c49363efb, type: 3}
+    - {fileID: 1700410402662398526, guid: 13f827c3bd21b9048affe09c49363efb, type: 3}
+    - {fileID: 1700410402662398526, guid: 13f827c3bd21b9048affe09c49363efb, type: 3}
     - {fileID: 0}
     - {fileID: 0}
   - gemsInRow:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
+    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
+    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
+    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
+    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
 --- !u!1 &386960276
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,7 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87cf17939b657b343b0b0f65ad8f0a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundTime: 15
+  roundTime: 60
   roundScore: 0
   displayScore: 0
   scoreSpeed: 5
