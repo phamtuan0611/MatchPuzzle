@@ -28,7 +28,7 @@ public class Gem : MonoBehaviour
 
     public int blastSize = 2;
 
-    public int scoreValue = 10;
+    public int scoreValue = 5;
 
     // Start is called before the first frame update    
     void Start()

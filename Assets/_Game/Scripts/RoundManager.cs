@@ -20,6 +20,7 @@ public class RoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        //uiMan.bestScoretext.text = PlayerPrefs.GetString("BestScore");
         uiMan = FindObjectOfType<UIManager>();
         board = FindObjectOfType<Board>();
     }
@@ -56,6 +57,9 @@ public class RoundManager : MonoBehaviour
         uiMan.roundOver.SetActive(true);
 
         uiMan.winScore.text = roundScore.ToString();
+
+        PlayerPrefs.SetString("BestScore", roundScore.ToString());
+        
 
         if (roundScore >= scoreTarget3)
         {

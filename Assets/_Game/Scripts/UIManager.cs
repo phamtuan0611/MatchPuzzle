@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
 {
     public TMP_Text timeText;
     public TMP_Text scoreText;
+    public TMP_Text shuffleText;
+    public TMP_Text bestScoretext;
 
     public TMP_Text winScore;
     public TMP_Text winText;
@@ -20,6 +22,7 @@ public class UIManager : MonoBehaviour
     public string levelSelect;
 
     public GameObject pauseScreen;
+
     private int count = 0;
 
     private void Awake()
@@ -30,6 +33,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        count = 3;
         winStars1.SetActive(false);
         winStars2.SetActive(false);
         winStars3.SetActive(false);
@@ -60,11 +64,12 @@ public class UIManager : MonoBehaviour
 
     public void ShuffleBoard()
     {
-        if (count < 3)
+        if (count > 0)
         {
-            count++;
+            count--;
             Debug.Log(count);
             theBoard.ShuffleBoard();
+            shuffleText.text = count.ToString();
         }
         else
         {
