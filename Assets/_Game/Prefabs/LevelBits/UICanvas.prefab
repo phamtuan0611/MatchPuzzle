@@ -4648,16 +4648,19 @@ MonoBehaviour:
   scoreText: {fileID: 5933146748452811744}
   shuffleText: {fileID: 4405570779481543759}
   bestScoretext: {fileID: 5343226415132176248}
-  winScore: {fileID: 1817856241361227589}
-  winText: {fileID: 6418163797460814254}
-  winStars1: {fileID: 6202845992818151837}
-  winStars2: {fileID: 7625541096959761109}
-  winStars3: {fileID: 3248903703827750707}
+  winScore: {fileID: 1378128447829564764}
+  winText: {fileID: 7313868556898116440}
+  winStars1: {fileID: 3416239370513073097}
+  winStars2: {fileID: 2452615910034705875}
+  winStars3: {fileID: 8493705874809351910}
   roundOver: {fileID: 7705965733981727529}
   winGame: {fileID: 1167626885409066249}
   levelSelect: LevelSelect
   pauseScreen: {fileID: 1345112183752906226}
-  nextLevel: Level04
+  nextLevel: Level03
+  showScore: {fileID: 5988446226894210961, guid: 1c228b4a894e04b40b359fc221541c50, type: 3}
+  bonusScore: {fileID: 4602437745623831021, guid: c5bc48654c217e14b9f5654bbadbe495, type: 3}
+  plus: {fileID: 3250626570648393764, guid: 9351102a4ea8f32438b0b63ca3747673, type: 3}
 --- !u!1 &8919606772748469383
 GameObject:
   m_ObjectHideFlags: 0
