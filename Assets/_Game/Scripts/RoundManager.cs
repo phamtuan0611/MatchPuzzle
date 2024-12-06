@@ -17,12 +17,22 @@ public class RoundManager : MonoBehaviour
 
     public int scoreTarget1, scoreTarget2, scoreTarget3;
 
+    public string levelName;
+
     // Start is called before the first frame update
     void Awake()
     {
         //uiMan.bestScoretext.text = PlayerPrefs.GetString("BestScore");
         uiMan = FindObjectOfType<UIManager>();
         board = FindObjectOfType<Board>();
+    }
+
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("BestScore" + levelName))
+        {
+            uiMan.bestScoretext.text = PlayerPrefs.GetFloat("BestScore" + levelName).ToString();
+        }
     }
 
     // Update is called once per frame
@@ -54,12 +64,25 @@ public class RoundManager : MonoBehaviour
 
     private void WinCheck()
     {
-        uiMan.roundOver.SetActive(true);
+        //uiMan.roundOver.SetActive(true);
+        uiMan.winGame.SetActive(true);
 
         uiMan.winScore.text = roundScore.ToString();
 
-        PlayerPrefs.SetString("BestScore", roundScore.ToString());
-        
+        if (!PlayerPrefs.HasKey("BestScore" + levelName))
+        {
+            PlayerPrefs.SetFloat("BestScore" + levelName, roundScore);
+
+        }
+        else
+        {
+            if (roundScore > PlayerPrefs.GetFloat("BestScore" + levelName))
+            {
+                PlayerPrefs.SetFloat("BestScore" + levelName, roundScore);
+            }
+        }
+
+        Debug.Log("Best score in Level: " + PlayerPrefs.GetFloat("BestScore" + levelName));
 
         if (roundScore >= scoreTarget3)
         {

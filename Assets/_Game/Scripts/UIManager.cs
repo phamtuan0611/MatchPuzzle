@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     public GameObject winStars1, winStars2, winStars3;
 
     public GameObject roundOver;
+    public GameObject winGame;
 
     private Board theBoard;
 
@@ -24,6 +25,10 @@ public class UIManager : MonoBehaviour
     public GameObject pauseScreen;
 
     private int count = 0;
+
+    public string nextLevel;
+
+    public TMP_Text showScore, bonusScore, plus;
 
     private void Awake()
     {
@@ -91,5 +96,10 @@ public class UIManager : MonoBehaviour
     public void TryAgain()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(nextLevel);
     }
 }

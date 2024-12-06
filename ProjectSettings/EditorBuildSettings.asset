@@ -15,9 +15,15 @@ EditorBuildSettings:
     path: Assets/_Game/Scenes/TestScene.unity
     guid: f26c1370400f4294c8996712b2716940
   - enabled: 1
+    path: Assets/_Game/Scenes/Level/Level01.unity
+    guid: e2a1d905939b0db45b4a09ff5d05961a
+  - enabled: 1
     path: Assets/_Game/Scenes/Level/Level02.unity
     guid: cf4324a92634d1145a6dc811da7f2039
   - enabled: 1
-    path: Assets/_Game/Scenes/Level/Level01.unity
-    guid: e2a1d905939b0db45b4a09ff5d05961a
+    path: Assets/_Game/Scenes/Level/Level03.unity
+    guid: 61f6b7fefaa0b8d4085e5d56c96ce2f5
+  - enabled: 1
+    path: Assets/_Game/Scenes/Level/Level04.unity
+    guid: 7d854e0b6e89f8e449c7e6273db948f8
   m_configObjects: {}

@@ -265,6 +265,7 @@ MonoBehaviour:
   scoreTarget1: 100
   scoreTarget2: 500
   scoreTarget3: 1000
+  levelName: Level01
 --- !u!4 &1096018364
 Transform:
   m_ObjectHideFlags: 0
@@ -885,6 +886,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6887018435660106038, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
+      propertyPath: nextLevel
+      value: Level02
+      objectReference: {fileID: 0}
     - target: {fileID: 7213842287019145191, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
       propertyPath: m_Pivot.x
       value: 0

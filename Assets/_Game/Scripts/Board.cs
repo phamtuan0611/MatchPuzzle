@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Board : MonoBehaviour
@@ -32,11 +33,18 @@ public class Board : MonoBehaviour
     private BoardLayOut boardLayOut;
     private Gem[,] layoutStore;
 
+    public int showScore;
+    public int bonusScore;
+
+    private UIManager uiMan;
+
     private void Awake()
     {
         matchFind = FindObjectOfType<MatchFinder>();
         roundManager = FindObjectOfType<RoundManager>();
         boardLayOut = GetComponent<BoardLayOut>();
+        uiMan = FindObjectOfType<UIManager>();
+        showScore = 0;
     }
     // Start is called before the first frame update
     void Start()
@@ -177,7 +185,30 @@ public class Board : MonoBehaviour
             }
         }
 
+        Debug.Log("Show score: " + showScore);
+        uiMan.showScore.text = showScore.ToString();
+        StartCoroutine(ShowScore());
+
+        Debug.Log("Bonus score: " + bonusScore);
+        bonusScore = 0;
+
         StartCoroutine(DecreaseRowCo());
+    }
+    private IEnumerator ShowScore()
+    {
+        TMP_Text showScoreInstance = Instantiate(uiMan.showScore, matchFind.transform.position, Quaternion.identity);
+        showScoreInstance.transform.SetParent(uiMan.transform);
+        showScoreInstance.rectTransform.anchoredPosition = new Vector3(-220, 250, 0);
+        showScore = 0;
+
+        TMP_Text plusInstance = Instantiate(uiMan.plus, matchFind.transform.position, Quaternion.identity);
+        plusInstance.transform.SetParent(uiMan.transform);
+        plusInstance.rectTransform.anchoredPosition = new Vector3(showScoreInstance.rectTransform.anchoredPosition.x - 50, 250, 0);
+
+        yield return new WaitForSeconds(1f);
+
+        Destroy(showScoreInstance);
+        Destroy(plusInstance);
     }
 
     private IEnumerator DecreaseRowCo()
@@ -319,10 +350,17 @@ public class Board : MonoBehaviour
     {
         roundManager.roundScore += gemToCheck.scoreValue;
 
+        showScore += gemToCheck.scoreValue;
+
+
         if (bonusMulti > 0)
         {
+            Debug.Log("Bonus Multi: " + bonusMulti);
             float bonusToAdd = gemToCheck.scoreValue * bonusMulti + bonusMulti;
             roundManager.roundScore += Mathf.RoundToInt(bonusToAdd);
+            bonusScore += Mathf.RoundToInt(bonusToAdd);
         }
     }
+
+
 }
