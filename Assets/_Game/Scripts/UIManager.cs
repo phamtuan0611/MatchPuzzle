@@ -28,7 +28,9 @@ public class UIManager : MonoBehaviour
 
     public string nextLevel;
 
-    public TMP_Text showScore, bonusScore, plus;
+    //public TMP_Text score, bonusScore;
+
+    public GameObject showScore, showBonusScore;
 
     private void Awake()
     {

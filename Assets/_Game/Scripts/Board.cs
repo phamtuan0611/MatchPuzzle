@@ -186,29 +186,49 @@ public class Board : MonoBehaviour
         }
 
         Debug.Log("Show score: " + showScore);
-        uiMan.showScore.text = showScore.ToString();
+
         StartCoroutine(ShowScore());
 
         Debug.Log("Bonus score: " + bonusScore);
-        bonusScore = 0;
 
         StartCoroutine(DecreaseRowCo());
     }
     private IEnumerator ShowScore()
     {
-        TMP_Text showScoreInstance = Instantiate(uiMan.showScore, matchFind.transform.position, Quaternion.identity);
+        GameObject showScoreInstance = Instantiate(uiMan.showScore, uiMan.transform.position, Quaternion.identity);
         showScoreInstance.transform.SetParent(uiMan.transform);
-        showScoreInstance.rectTransform.anchoredPosition = new Vector3(-220, 250, 0);
+        showScoreInstance.transform.position = new Vector3(960f, 540f, 0);
+
+        TextMeshProUGUI scoreTextComponent = showScoreInstance.transform.Find("Score").GetComponent<TextMeshProUGUI>();
+        if (scoreTextComponent != null)
+        {
+            scoreTextComponent.text = showScore.ToString();
+        }
+
         showScore = 0;
 
-        TMP_Text plusInstance = Instantiate(uiMan.plus, matchFind.transform.position, Quaternion.identity);
-        plusInstance.transform.SetParent(uiMan.transform);
-        plusInstance.rectTransform.anchoredPosition = new Vector3(showScoreInstance.rectTransform.anchoredPosition.x - 50, 250, 0);
-
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.75f);
 
         Destroy(showScoreInstance);
-        Destroy(plusInstance);
+
+        if (bonusScore != 0)
+        {
+            GameObject showBonusScoreInstance = Instantiate(uiMan.showBonusScore, uiMan.transform.position, Quaternion.identity);
+            showBonusScoreInstance.transform.SetParent(uiMan.transform);
+            showBonusScoreInstance.transform.position = new Vector3(960f, 540f, 0);
+
+            TextMeshProUGUI scoreTextBonusComponent = showBonusScoreInstance.transform.Find("BonusScore").GetComponent<TextMeshProUGUI>();
+            if (scoreTextBonusComponent != null)
+            {
+                scoreTextBonusComponent.text = bonusScore.ToString();
+            }
+
+            bonusScore = 0;
+
+            yield return new WaitForSeconds(0.75f);
+
+            Destroy(showBonusScoreInstance);
+        }
     }
 
     private IEnumerator DecreaseRowCo()
@@ -356,7 +376,7 @@ public class Board : MonoBehaviour
         if (bonusMulti > 0)
         {
             Debug.Log("Bonus Multi: " + bonusMulti);
-            float bonusToAdd = gemToCheck.scoreValue * bonusMulti + bonusMulti;
+            float bonusToAdd = gemToCheck.scoreValue * bonusMulti * 0.75f + bonusMulti;
             roundManager.roundScore += Mathf.RoundToInt(bonusToAdd);
             bonusScore += Mathf.RoundToInt(bonusToAdd);
         }

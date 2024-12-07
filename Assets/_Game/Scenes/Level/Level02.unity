@@ -302,16 +302,6 @@ MonoBehaviour:
     - {fileID: 3054133553708483512, guid: 574d5a89e5fdd214195f7decd4d14c92, type: 3}
     - {fileID: 4535848690909990601, guid: 795814c9f46fc1d4088ef5374d963156, type: 3}
     - {fileID: 0}
---- !u!1 &411446365 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8493705874809351910, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
-  m_PrefabInstance: {fileID: 1300891367065142342}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &438412163 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2452615910034705875, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
-  m_PrefabInstance: {fileID: 1300891367065142342}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &440514636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -369,11 +359,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d2392287459b5545b5a62e48e157ebf, type: 3}
---- !u!1 &544854344 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3416239370513073097, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
-  m_PrefabInstance: {fileID: 1300891367065142342}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &960207269
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,17 +539,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1262879469 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7313868556898116440, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
-  m_PrefabInstance: {fileID: 1300891367065142342}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1300949965
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,17 +623,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1707667052 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1378128447829564764, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
-  m_PrefabInstance: {fileID: 1300891367065142342}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1741344554
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,38 +959,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6887018435660106038, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
-      propertyPath: winText
-      value: 
-      objectReference: {fileID: 1262879469}
-    - target: {fileID: 6887018435660106038, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
-      propertyPath: winScore
-      value: 
-      objectReference: {fileID: 1707667052}
-    - target: {fileID: 6887018435660106038, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
-      propertyPath: nextLevel
-      value: Level03
-      objectReference: {fileID: 0}
-    - target: {fileID: 6887018435660106038, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
-      propertyPath: showScore
-      value: 
-      objectReference: {fileID: 5988446226894210961, guid: 1c228b4a894e04b40b359fc221541c50, type: 3}
-    - target: {fileID: 6887018435660106038, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
-      propertyPath: winStars1
-      value: 
-      objectReference: {fileID: 544854344}
-    - target: {fileID: 6887018435660106038, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
-      propertyPath: winStars2
-      value: 
-      objectReference: {fileID: 438412163}
-    - target: {fileID: 6887018435660106038, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
-      propertyPath: winStars3
-      value: 
-      objectReference: {fileID: 411446365}
-    - target: {fileID: 6887018435660106038, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
-      propertyPath: bonusScore
-      value: 
-      objectReference: {fileID: 4602437745623831021, guid: c5bc48654c217e14b9f5654bbadbe495, type: 3}
     - target: {fileID: 7213842287019145191, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
       propertyPath: m_Pivot.x
       value: 0
