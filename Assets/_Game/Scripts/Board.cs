@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using DG;
+using DG.Tweening;
 
 public class Board : MonoBehaviour
 {
@@ -38,6 +40,8 @@ public class Board : MonoBehaviour
 
     private UIManager uiMan;
 
+    private float timeFade;
+
     private void Awake()
     {
         matchFind = FindObjectOfType<MatchFinder>();
@@ -54,6 +58,8 @@ public class Board : MonoBehaviour
         layoutStore = new Gem[width, height];
 
         Setup();
+
+        timeFade = 0f;
     }
 
     private void Update()
@@ -63,6 +69,11 @@ public class Board : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
             ShuffleBoard();
+        }
+
+        if (timeFade > 0f)
+        {
+            timeFade -= Time.deltaTime;
         }
     }
 
@@ -204,12 +215,16 @@ public class Board : MonoBehaviour
         {
             scoreTextComponent.text = showScore.ToString();
         }
+        showScoreInstance.transform.localScale = Vector3.zero;
+        showScoreInstance.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack);
 
         showScore = 0;
 
         yield return new WaitForSeconds(0.75f);
-
+        showScoreInstance.transform.DOScale(Vector3.zero, 0.25f);
         Destroy(showScoreInstance);
+
+        yield return new WaitForSeconds(0.25f);
 
         if (bonusScore != 0)
         {
@@ -223,6 +238,8 @@ public class Board : MonoBehaviour
                 scoreTextBonusComponent.text = bonusScore.ToString();
             }
 
+            showBonusScoreInstance.transform.localScale = Vector3.zero;
+            showBonusScoreInstance.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack);
             bonusScore = 0;
 
             yield return new WaitForSeconds(0.75f);

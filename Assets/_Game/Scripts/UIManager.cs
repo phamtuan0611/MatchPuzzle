@@ -44,6 +44,8 @@ public class UIManager : MonoBehaviour
         winStars1.SetActive(false);
         winStars2.SetActive(false);
         winStars3.SetActive(false);
+
+        TextMeshProUGUI scoreText = showScore.transform.Find("Score").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
