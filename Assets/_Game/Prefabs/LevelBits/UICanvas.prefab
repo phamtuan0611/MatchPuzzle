@@ -4658,9 +4658,8 @@ MonoBehaviour:
   levelSelect: LevelSelect
   pauseScreen: {fileID: 1345112183752906226}
   nextLevel: Level03
-  showScore: {fileID: 5988446226894210961, guid: 1c228b4a894e04b40b359fc221541c50, type: 3}
-  bonusScore: {fileID: 4602437745623831021, guid: c5bc48654c217e14b9f5654bbadbe495, type: 3}
-  plus: {fileID: 3250626570648393764, guid: 9351102a4ea8f32438b0b63ca3747673, type: 3}
+  showScore: {fileID: 1776319447909954363, guid: 1c228b4a894e04b40b359fc221541c50, type: 3}
+  showBonusScore: {fileID: 1493827810698777582, guid: 3d943912663bbfc4989406e61d49bd0e, type: 3}
 --- !u!1 &8919606772748469383
 GameObject:
   m_ObjectHideFlags: 0

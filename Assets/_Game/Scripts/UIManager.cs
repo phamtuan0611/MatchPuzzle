@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviour
     public GameObject roundOver;
     public GameObject winGame;
 
+    public GameObject winPopup;
+
     private Board theBoard;
 
     public string levelSelect;
@@ -105,5 +107,10 @@ public class UIManager : MonoBehaviour
     public void NextLevel()
     {
         SceneManager.LoadScene(nextLevel);
+    }
+
+    public void WinPopup()
+    {
+        winPopup.SetActive(true);
     }
 }
