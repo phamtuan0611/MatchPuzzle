@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG;
+using DG.Tweening;
 
 public class RoundManager : MonoBehaviour
 {
@@ -19,12 +21,17 @@ public class RoundManager : MonoBehaviour
 
     public string levelName;
 
+    private MatchFinder matchFinder;
+    private int checkFade;
+
     // Start is called before the first frame update
     void Awake()
     {
         //uiMan.bestScoretext.text = PlayerPrefs.GetString("BestScore");
         uiMan = FindObjectOfType<UIManager>();
         board = FindObjectOfType<Board>();
+        matchFinder = FindObjectOfType<MatchFinder>();
+        checkFade = 0;
     }
 
     private void Start()
@@ -45,9 +52,12 @@ public class RoundManager : MonoBehaviour
             if (roundTime <= 0)
             {
                 roundTime = 0;
-
-                endingRound = true;
             }
+        }
+
+        if (roundTime == 0 && board.currentState == Board.BoardState.move)
+        {
+            StartCoroutine(fadeGems());
         }
 
         if (endingRound == true && board.currentState == Board.BoardState.move)
@@ -60,6 +70,27 @@ public class RoundManager : MonoBehaviour
 
         displayScore = Mathf.Lerp(displayScore, roundScore, scoreSpeed * Time.deltaTime);
         uiMan.scoreText.text = displayScore.ToString("0");
+    }
+
+    private IEnumerator fadeGems()
+    {
+        yield return new WaitForSeconds(1f);
+
+        for (int y = board.height - 1; y >= 0; y--)
+        {
+            for (int x = board.width - 1; x >= 0; x--)
+            {
+                GameObject gems = board.allGems[x, y].gameObject;
+                SpriteRenderer spriteRenderer = gems.GetComponent<SpriteRenderer>();
+                spriteRenderer.DOColor(new Color(0.5f, 0.5f, 0.5f), 0.5f);
+
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        yield return new WaitForSeconds(1f);
+
+        endingRound = true;
     }
 
     private void WinCheck()
