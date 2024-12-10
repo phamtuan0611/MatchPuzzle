@@ -211,6 +211,8 @@ MonoBehaviour:
   bombChance: 2
   roundManager: {fileID: 0}
   bonusAmount: 0.5
+  showScore: 0
+  bonusScore: 0
 --- !u!4 &328535359
 Transform:
   m_ObjectHideFlags: 0
@@ -886,6 +888,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 980072339111457770, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
+      propertyPath: m_text
+      value: LEVEL 01
+      objectReference: {fileID: 0}
     - target: {fileID: 6887018435660106038, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
       propertyPath: nextLevel
       value: Level02

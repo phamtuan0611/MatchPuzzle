@@ -30,6 +30,8 @@ public class UIManager : MonoBehaviour
 
     public string nextLevel;
 
+    public GameObject introduceLevel;
+
     //public TMP_Text score, bonusScore;
 
     public GameObject showScore, showBonusScore;
@@ -42,6 +44,8 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(IntroduceLevel());
+
         count = 3;
         winStars1.SetActive(false);
         winStars2.SetActive(false);
@@ -57,6 +61,7 @@ public class UIManager : MonoBehaviour
         {
             PauseUnpause();
         }
+
     }
 
     public void PauseUnpause()
@@ -112,5 +117,14 @@ public class UIManager : MonoBehaviour
     public void WinPopup()
     {
         winPopup.SetActive(true);
+    }
+
+    private IEnumerator IntroduceLevel()
+    {
+        introduceLevel.SetActive(true);
+
+        yield return new WaitForSeconds(1f);
+
+        introduceLevel.SetActive(false);
     }
 }

@@ -21,17 +21,15 @@ public class RoundManager : MonoBehaviour
 
     public string levelName;
 
-    private MatchFinder matchFinder;
-    private int checkFade;
+    private bool checkIntroduce;
 
     // Start is called before the first frame update
     void Awake()
     {
+        checkIntroduce = false;
         //uiMan.bestScoretext.text = PlayerPrefs.GetString("BestScore");
         uiMan = FindObjectOfType<UIManager>();
         board = FindObjectOfType<Board>();
-        matchFinder = FindObjectOfType<MatchFinder>();
-        checkFade = 0;
     }
 
     private void Start()
@@ -40,12 +38,14 @@ public class RoundManager : MonoBehaviour
         {
             uiMan.bestScoretext.text = PlayerPrefs.GetFloat("BestScore" + levelName).ToString();
         }
+
+        StartCoroutine(IntroduceLevel());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (roundTime > 0)
+        if (roundTime > 0 && checkIntroduce == true)
         {
             roundTime -= Time.deltaTime;
 
@@ -70,6 +70,16 @@ public class RoundManager : MonoBehaviour
 
         displayScore = Mathf.Lerp(displayScore, roundScore, scoreSpeed * Time.deltaTime);
         uiMan.scoreText.text = displayScore.ToString("0");
+    }
+
+    private IEnumerator IntroduceLevel()
+    {
+        uiMan.introduceLevel.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
+
+        uiMan.introduceLevel.SetActive(false);
+        checkIntroduce = true;
     }
 
     private IEnumerator fadeGems()
