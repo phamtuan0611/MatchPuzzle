@@ -261,10 +261,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87cf17939b657b343b0b0f65ad8f0a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundTime: 10
+  roundTime: 30
   roundScore: 0
   displayScore: 0
-  scoreSpeed: 5
+  scoreSpeed: 3
   scoreTarget1: 100
   scoreTarget2: 500
   scoreTarget3: 1000

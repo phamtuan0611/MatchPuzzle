@@ -177,6 +177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 328535359}
   - component: {fileID: 328535358}
+  - component: {fileID: 328535360}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -231,6 +232,49 @@ Transform:
   - {fileID: 1300949966}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &328535360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328535357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2bc8a44f5d62d748bd99d80788cf145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allRows:
+  - gemsInRow:
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
+    - {fileID: 6471597172337383717, guid: fd56793712651de498e943d5c7319d55, type: 3}
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
+    - {fileID: 6471597172337383717, guid: fd56793712651de498e943d5c7319d55, type: 3}
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
+  - gemsInRow:
+    - {fileID: 6471597172337383717, guid: fd56793712651de498e943d5c7319d55, type: 3}
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
+    - {fileID: 6471597172337383717, guid: fd56793712651de498e943d5c7319d55, type: 3}
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
+    - {fileID: 6471597172337383717, guid: fd56793712651de498e943d5c7319d55, type: 3}
+  - gemsInRow:
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
+    - {fileID: 6471597172337383717, guid: fd56793712651de498e943d5c7319d55, type: 3}
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
+    - {fileID: 6471597172337383717, guid: fd56793712651de498e943d5c7319d55, type: 3}
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
+  - gemsInRow:
+    - {fileID: 6471597172337383717, guid: fd56793712651de498e943d5c7319d55, type: 3}
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
+    - {fileID: 6471597172337383717, guid: fd56793712651de498e943d5c7319d55, type: 3}
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
+    - {fileID: 6471597172337383717, guid: fd56793712651de498e943d5c7319d55, type: 3}
+  - gemsInRow:
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
+    - {fileID: 6471597172337383717, guid: fd56793712651de498e943d5c7319d55, type: 3}
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
+    - {fileID: 6471597172337383717, guid: fd56793712651de498e943d5c7319d55, type: 3}
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
 --- !u!1 &1096018362
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,13 +304,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87cf17939b657b343b0b0f65ad8f0a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundTime: 15
+  roundTime: 25
   roundScore: 0
   displayScore: 0
-  scoreSpeed: 5
-  scoreTarget1: 100
-  scoreTarget2: 500
-  scoreTarget3: 1000
+  scoreSpeed: 3
+  scoreTarget1: 200
+  scoreTarget2: 300
+  scoreTarget3: 500
   levelName: Level01
 --- !u!4 &1096018364
 Transform:
@@ -888,13 +932,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 980072339111457770, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
-      propertyPath: m_text
-      value: LEVEL 01
+    - target: {fileID: 982099471063693775, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6887018435660106038, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
-      propertyPath: nextLevel
-      value: Level02
+    - target: {fileID: 4281404062375906483, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
+      propertyPath: m_text
+      value: '200:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5917498606241477801, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
+      propertyPath: m_text
+      value: '  500:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214145848053997712, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
+      propertyPath: m_text
+      value: '  300:'
       objectReference: {fileID: 0}
     - target: {fileID: 7213842287019145191, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
       propertyPath: m_Pivot.x

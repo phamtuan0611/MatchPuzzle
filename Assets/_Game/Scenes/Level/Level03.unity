@@ -197,8 +197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2aa7178fd7dc634998b6162110a02f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 7
-  height: 7
+  width: 6
+  height: 6
   bgTilePrefab: {fileID: 3848638781692299749, guid: 92f1c6b471aea6544b45301daa963240, type: 3}
   gems:
   - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
@@ -247,61 +247,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allRows:
   - gemsInRow:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
+    - {fileID: 6157432946237737946, guid: 11cd02d3a95251d4ebdfdeec30030b59, type: 3}
+    - {fileID: 6157432946237737946, guid: 11cd02d3a95251d4ebdfdeec30030b59, type: 3}
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
   - gemsInRow:
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
+    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
   - gemsInRow:
+    - {fileID: 6157432946237737946, guid: 11cd02d3a95251d4ebdfdeec30030b59, type: 3}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 6157432946237737946, guid: 11cd02d3a95251d4ebdfdeec30030b59, type: 3}
   - gemsInRow:
+    - {fileID: 6157432946237737946, guid: 11cd02d3a95251d4ebdfdeec30030b59, type: 3}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 6471597172337383717, guid: fd56793712651de498e943d5c7319d55, type: 3}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 6157432946237737946, guid: 11cd02d3a95251d4ebdfdeec30030b59, type: 3}
   - gemsInRow:
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
+    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 6471597172337383717, guid: fd56793712651de498e943d5c7319d55, type: 3}
-    - {fileID: 6471597172337383717, guid: fd56793712651de498e943d5c7319d55, type: 3}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - gemsInRow:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 1700410402662398526, guid: 13f827c3bd21b9048affe09c49363efb, type: 3}
-    - {fileID: 1700410402662398526, guid: 13f827c3bd21b9048affe09c49363efb, type: 3}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
   - gemsInRow:
     - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
     - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
-    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
-    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
-    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
-    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
-    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
+    - {fileID: 6157432946237737946, guid: 11cd02d3a95251d4ebdfdeec30030b59, type: 3}
+    - {fileID: 6157432946237737946, guid: 11cd02d3a95251d4ebdfdeec30030b59, type: 3}
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
+    - {fileID: 5255359576211094713, guid: 8ec84dde6852918449fb69473af034be, type: 3}
 --- !u!1 &386960276
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,13 +445,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87cf17939b657b343b0b0f65ad8f0a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundTime: 15
+  roundTime: 25
   roundScore: 0
   displayScore: 0
-  scoreSpeed: 5
-  scoreTarget1: 500
-  scoreTarget2: 1000
-  scoreTarget3: 2000
+  scoreSpeed: 3
+  scoreTarget1: 200
+  scoreTarget2: 300
+  scoreTarget3: 500
   levelName: Level03
 --- !u!4 &1096018364
 Transform:
@@ -508,7 +494,7 @@ Transform:
   m_GameObject: {fileID: 1300949965}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 3, z: 0}
+  m_LocalPosition: {x: 2.5, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -560,7 +546,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 7.4, y: 7.4}
+  m_Size: {x: 6.4, y: 6.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -649,7 +635,7 @@ Transform:
   m_GameObject: {fileID: 1741344554}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 3, z: 0}
+  m_LocalPosition: {x: 2.5, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -701,7 +687,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 7.2, y: 7.2}
+  m_Size: {x: 6.2, y: 6.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -733,7 +719,7 @@ Transform:
   m_GameObject: {fileID: 1750367646}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 3, z: 0}
+  m_LocalPosition: {x: 2.5, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -785,7 +771,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 7, y: 7}
+  m_Size: {x: 6, y: 6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -852,7 +838,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 3.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -877,7 +863,7 @@ Transform:
   m_GameObject: {fileID: 1949606417}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: -10}
+  m_LocalPosition: {x: 0, y: 2.45, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -962,6 +948,22 @@ PrefabInstance:
     - target: {fileID: 980072339111457770, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
       propertyPath: m_text
       value: LEVEL 03
+      objectReference: {fileID: 0}
+    - target: {fileID: 982099471063693775, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281404062375906483, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
+      propertyPath: m_text
+      value: '200:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5917498606241477801, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
+      propertyPath: m_text
+      value: '  500:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214145848053997712, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
+      propertyPath: m_text
+      value: '  300:'
       objectReference: {fileID: 0}
     - target: {fileID: 7213842287019145191, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
       propertyPath: m_Pivot.x

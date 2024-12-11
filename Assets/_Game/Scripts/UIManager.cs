@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(IntroduceLevel());
+        
 
         count = 3;
         winStars1.SetActive(false);
@@ -119,12 +119,4 @@ public class UIManager : MonoBehaviour
         winPopup.SetActive(true);
     }
 
-    private IEnumerator IntroduceLevel()
-    {
-        introduceLevel.SetActive(true);
-
-        yield return new WaitForSeconds(1f);
-
-        introduceLevel.SetActive(false);
-    }
 }

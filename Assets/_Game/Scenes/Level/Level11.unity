@@ -519,11 +519,11 @@ MonoBehaviour:
   roundTime: 15
   roundScore: 0
   displayScore: 0
-  scoreSpeed: 5
+  scoreSpeed: 3
   scoreTarget1: 100
   scoreTarget2: 500
   scoreTarget3: 1000
-  levelName: Level04
+  levelName: Level11
 --- !u!4 &1096018364
 Transform:
   m_ObjectHideFlags: 0
