@@ -445,7 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87cf17939b657b343b0b0f65ad8f0a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundTime: 25
+  roundTime: 30
   roundScore: 0
   displayScore: 0
   scoreSpeed: 3
@@ -964,6 +964,10 @@ PrefabInstance:
     - target: {fileID: 6214145848053997712, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
       propertyPath: m_text
       value: '  300:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887018435660106038, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
+      propertyPath: nextLevel
+      value: Level04
       objectReference: {fileID: 0}
     - target: {fileID: 7213842287019145191, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
       propertyPath: m_Pivot.x

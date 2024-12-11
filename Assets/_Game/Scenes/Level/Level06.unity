@@ -249,8 +249,8 @@ MonoBehaviour:
   - gemsInRow:
     - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
     - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
-    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
-    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
+    - {fileID: 1700410402662398526, guid: 13f827c3bd21b9048affe09c49363efb, type: 3}
+    - {fileID: 1700410402662398526, guid: 13f827c3bd21b9048affe09c49363efb, type: 3}
     - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
     - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
   - gemsInRow:
@@ -261,12 +261,19 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
   - gemsInRow:
-    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
+    - {fileID: 1700410402662398526, guid: 13f827c3bd21b9048affe09c49363efb, type: 3}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
+    - {fileID: 1700410402662398526, guid: 13f827c3bd21b9048affe09c49363efb, type: 3}
+  - gemsInRow:
+    - {fileID: 1700410402662398526, guid: 13f827c3bd21b9048affe09c49363efb, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 1700410402662398526, guid: 13f827c3bd21b9048affe09c49363efb, type: 3}
   - gemsInRow:
     - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
     - {fileID: 0}
@@ -276,16 +283,9 @@ MonoBehaviour:
     - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
   - gemsInRow:
     - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
     - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
-  - gemsInRow:
-    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
-    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
-    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
-    - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
+    - {fileID: 1700410402662398526, guid: 13f827c3bd21b9048affe09c49363efb, type: 3}
+    - {fileID: 1700410402662398526, guid: 13f827c3bd21b9048affe09c49363efb, type: 3}
     - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
     - {fileID: 4081002914185862760, guid: 031c34c66662a9647b1d8ba8cb037bd0, type: 3}
 --- !u!1001 &814331571
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87cf17939b657b343b0b0f65ad8f0a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundTime: 30
+  roundTime: 60
   roundScore: 0
   displayScore: 0
   scoreSpeed: 3

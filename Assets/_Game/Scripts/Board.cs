@@ -208,7 +208,7 @@ public class Board : MonoBehaviour
     {
         GameObject showScoreInstance = Instantiate(uiMan.showScore, uiMan.transform.position, Quaternion.identity);
         showScoreInstance.transform.SetParent(uiMan.transform);
-        showScoreInstance.transform.position = new Vector3(960f, 540f, 0);
+        //showScoreInstance.transform.position = new Vector3(960f, 540f, 0);
 
         TextMeshProUGUI scoreTextComponent = showScoreInstance.transform.Find("Score").GetComponent<TextMeshProUGUI>();
         if (scoreTextComponent != null)
@@ -221,7 +221,11 @@ public class Board : MonoBehaviour
         showScore = 0;
 
         yield return new WaitForSeconds(0.75f);
+
         showScoreInstance.transform.DOScale(Vector3.zero, 0.25f);
+
+        yield return new WaitForSeconds(0.25f);
+
         Destroy(showScoreInstance);
 
         yield return new WaitForSeconds(0.25f);
@@ -230,7 +234,7 @@ public class Board : MonoBehaviour
         {
             GameObject showBonusScoreInstance = Instantiate(uiMan.showBonusScore, uiMan.transform.position, Quaternion.identity);
             showBonusScoreInstance.transform.SetParent(uiMan.transform);
-            showBonusScoreInstance.transform.position = new Vector3(960f, 540f, 0);
+            //showBonusScoreInstance.transform.position = new Vector3(960f, 540f, 0);
 
             TextMeshProUGUI scoreTextBonusComponent = showBonusScoreInstance.transform.Find("BonusScore").GetComponent<TextMeshProUGUI>();
             if (scoreTextBonusComponent != null)
@@ -244,6 +248,9 @@ public class Board : MonoBehaviour
 
             yield return new WaitForSeconds(0.75f);
 
+            showBonusScoreInstance.transform.DOScale(Vector3.zero, 0.25f);
+
+            yield return new WaitForSeconds(0.25f);
             Destroy(showBonusScoreInstance);
         }
     }
