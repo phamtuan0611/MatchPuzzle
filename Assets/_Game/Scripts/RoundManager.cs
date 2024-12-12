@@ -57,7 +57,14 @@ public class RoundManager : MonoBehaviour
 
         if (roundTime == 0 && board.currentState == Board.BoardState.move)
         {
-            StartCoroutine(fadeGems());
+            if (roundScore >= scoreTarget3)
+            {
+                StartCoroutine(Animation3Star());
+            }
+            else
+            {
+                StartCoroutine(fadeGems());
+            }
         }
 
         if (endingRound == true && board.currentState == Board.BoardState.move)
@@ -101,6 +108,31 @@ public class RoundManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         endingRound = true;
+    }
+
+    private IEnumerator Animation3Star()
+    {
+        for (int x = 0; x < board.width; x++)
+        {
+            for (int y = x; y >= 0; y--)
+            {
+                board.allGems[x, y].gameObject.transform.DOScale(Vector3.zero, 0.1f).SetEase(Ease.Linear).SetLoops(1);
+                DOTween.Kill(board.allGems[x, y].gameObject);
+                //yield return new WaitForSeconds(0.05f);
+
+                //board.allGems[x, y].gameObject.transform.DOScale(Vector3.one, 0.1f).SetEase(Ease.Linear).SetLoops(1);
+                //DOTween.Kill(board.allGems[x, y].gameObject);
+
+                x++;
+
+                Debug.Log("Toa do: " + "(" + x + ", " + y + ")");
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        yield return new WaitForSeconds(0.1f);
+
+        StartCoroutine(fadeGems());
     }
 
     private void WinCheck()
