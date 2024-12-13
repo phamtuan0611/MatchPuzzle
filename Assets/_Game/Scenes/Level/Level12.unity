@@ -979,6 +979,10 @@ PrefabInstance:
       propertyPath: m_text
       value: LEVEL 12
       objectReference: {fileID: 0}
+    - target: {fileID: 4281404062375906483, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
+      propertyPath: m_text
+      value: '500:'
+      objectReference: {fileID: 0}
     - target: {fileID: 5917498606241477801, guid: 14344f56874acdf4f8faca92995b0d41, type: 3}
       propertyPath: m_text
       value: '1000:'
