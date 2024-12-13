@@ -335,9 +335,9 @@ MonoBehaviour:
   roundScore: 0
   displayScore: 0
   scoreSpeed: 3
-  scoreTarget1: 100
-  scoreTarget2: 200
-  scoreTarget3: 300
+  scoreTarget1: 10
+  scoreTarget2: 20
+  scoreTarget3: 30
   levelName: 
 --- !u!4 &1096018364
 Transform:

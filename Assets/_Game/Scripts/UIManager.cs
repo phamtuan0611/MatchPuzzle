@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
 
         count = 3;
         winStars1.SetActive(false);
@@ -80,16 +80,19 @@ public class UIManager : MonoBehaviour
 
     public void ShuffleBoard()
     {
-        if (count > 0)
+        if (theBoard.currentState == Board.BoardState.move)
         {
-            count--;
-            Debug.Log(count);
-            theBoard.ShuffleBoard();
-            shuffleText.text = count.ToString();
-        }
-        else
-        {
-            return;
+            if (count > 0)
+            {
+                count--;
+                Debug.Log(count);
+                theBoard.ShuffleBoard();
+                shuffleText.text = count.ToString();
+            }
+            else
+            {
+                return;
+            }
         }
     }
 

@@ -55,8 +55,10 @@ public class RoundManager : MonoBehaviour
             }
         }
 
-        if (roundTime == 0 && board.currentState == Board.BoardState.move)
+        if (roundTime == 0 && board.currentState == Board.BoardState.move && checkIntroduce == true)
         {
+            checkIntroduce = false;
+
             if (roundScore >= scoreTarget3)
             {
                 StartCoroutine(Animation3Star());
@@ -82,10 +84,12 @@ public class RoundManager : MonoBehaviour
     private IEnumerator IntroduceLevel()
     {
         uiMan.introduceLevel.SetActive(true);
+        board.currentState = Board.BoardState.wait;
 
         yield return new WaitForSeconds(2f);
 
         uiMan.introduceLevel.SetActive(false);
+        board.currentState = Board.BoardState.move;
         checkIntroduce = true;
     }
 
@@ -108,26 +112,55 @@ public class RoundManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         endingRound = true;
+        Debug.Log("1234567890");
     }
 
     private IEnumerator Animation3Star()
     {
-        for (int x = 0; x < board.width; x++)
+        //for (int x = 0; x < board.width; x++)
+        //{
+        //    int t = x;
+
+        //    for (int y = x; y >= 0; y--)
+        //    {
+        //        if (x != 0) x = 0;
+        //        board.allGems[x, y].gameObject.transform.DOScale(Vector3.zero, 0.1f).SetEase(Ease.Linear).SetLoops(1);
+        //        x++;
+        //    }
+        //    yield return new WaitForSeconds(0.05f);
+
+        //    for (int y = x; y >= 0; y--)
+        //    {
+        //        if (x != 0) x = 0;
+        //        board.allGems[x, y].gameObject.transform.DOScale(Vector3.one, 0.1f).SetEase(Ease.Linear).SetLoops(1);
+        //        x++;
+        //    }
+        //    yield return new WaitForSeconds(0.1f);
+        //    x = t;
+        //}
+
+        for (int startRow = board.width - 1; startRow >= 0; startRow--)
         {
-            for (int y = x; y >= 0; y--)
+            int row = startRow, col = 0;
+            while (row < board.width && col < board.height)
             {
-                board.allGems[x, y].gameObject.transform.DOScale(Vector3.zero, 0.1f).SetEase(Ease.Linear).SetLoops(1);
-                DOTween.Kill(board.allGems[x, y].gameObject);
-                //yield return new WaitForSeconds(0.05f);
-
-                //board.allGems[x, y].gameObject.transform.DOScale(Vector3.one, 0.1f).SetEase(Ease.Linear).SetLoops(1);
-                //DOTween.Kill(board.allGems[x, y].gameObject);
-
-                x++;
-
-                Debug.Log("Toa do: " + "(" + x + ", " + y + ")");
+                board.allGems[row, col].gameObject.transform.DOScale(Vector3.zero, 0.1f).SetEase(Ease.Linear);
+                row++;
+                col++;
             }
-            yield return new WaitForSeconds(0.1f);
+        }
+
+        yield return new WaitForSeconds(0.05f);
+
+        for (int startCol = 1; startCol < board.height; startCol++)
+        {
+            int row = 0, col = startCol;
+            while (row < board.width && col < board.height)
+            {
+                board.allGems[row, col].gameObject.transform.DOScale(Vector3.one, 0.1f).SetEase(Ease.Linear);
+                row++;
+                col++;
+            }
         }
 
         yield return new WaitForSeconds(0.1f);
