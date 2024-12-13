@@ -63,6 +63,14 @@ public class RoundManager : MonoBehaviour
             {
                 StartCoroutine(Animation3Star());
             }
+            else if (roundScore >= scoreTarget2)
+            {
+                StartCoroutine(Animation2Star());
+            }
+            else if (roundScore >= scoreTarget1)
+            {
+                StartCoroutine(AnimationStar());
+            }
             else
             {
                 StartCoroutine(fadeGems());
@@ -114,8 +122,98 @@ public class RoundManager : MonoBehaviour
         endingRound = true;
     }
 
+    private IEnumerator AnimationStar()
+    {
+        yield return new WaitForSeconds(1f);
+
+        for (int y = board.height - 1; y >= 0; y--)
+        {
+            for (int x = board.width - 1; x >= 0; x--)
+            {
+                board.allGems[x, y].gameObject.transform.DOScale(Vector3.zero, 0.25f).SetEase(Ease.OutSine);
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        yield return new WaitForSeconds(0.01f);
+
+        for (int y = board.height - 1; y >= 0; y--)
+        {
+            for (int x = board.width - 1; x >= 0; x--)
+            {
+                board.allGems[x, y].gameObject.transform.DOScale(Vector3.one, 0.25f).SetEase(Ease.OutSine);
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        yield return new WaitForSeconds(1f);
+
+        endingRound = true;
+    }
+
+    private IEnumerator Animation2Star()
+    {
+        yield return new WaitForSeconds(1f);
+
+        for (int startRow = board.width - 1;  startRow >= 0; startRow--)
+        {
+            int row = startRow, col = 0;
+            while(row < board.width && col < board.height)
+            {
+                board.allGems[row, col].gameObject.transform.DOScale(Vector3.zero, 0.25f).SetEase(Ease.OutSine);
+                row++;
+                col++;
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        for (int startCol = 1; startCol < board.height; startCol++)
+        {
+            int row = 0, col = startCol;
+            while (row < board.width && col < board.height)
+            {
+                board.allGems[row, col].gameObject.transform.DOScale(Vector3.zero, 0.25f).SetEase(Ease.OutSine);
+                row++;
+                col++;
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        yield return new WaitForSeconds(0.005f);
+
+        for (int startRow = board.width - 1; startRow >= 0; startRow--)
+        {
+            int row = startRow, col = 0;
+            while (row < board.width && col < board.height)
+            {
+                board.allGems[row, col].gameObject.transform.DOScale(Vector3.one, 0.25f).SetEase(Ease.OutSine);
+                row++;
+                col++;
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        for (int startCol = 1; startCol < board.height; startCol++)
+        {
+            int row = 0, col = startCol;
+            while (row < board.width && col < board.height)
+            {
+                board.allGems[row, col].gameObject.transform.DOScale(Vector3.one, 0.25f).SetEase(Ease.OutSine);
+                row++;
+                col++;
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        yield return new WaitForSeconds(1f);
+
+        endingRound = true;
+    }
+
     private IEnumerator Animation3Star()
     {
+        yield return new WaitForSeconds(1f);
+
         float waveDuration = 0.5f; // Thời gian cho mỗi gợn sóng
         float delayBetweenWaves = 0.05f; // Thời gian chờ giữa mỗi ô được xử lý
         int centerRow = board.width / 2;

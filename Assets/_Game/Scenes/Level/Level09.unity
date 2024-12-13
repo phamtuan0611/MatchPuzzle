@@ -380,7 +380,7 @@ MonoBehaviour:
   scoreSpeed: 3
   scoreTarget1: 300
   scoreTarget2: 500
-  scoreTarget3: 700
+  scoreTarget3: 70
   levelName: Level09
 --- !u!4 &1096018364
 Transform:
