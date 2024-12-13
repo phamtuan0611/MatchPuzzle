@@ -122,6 +122,8 @@ public class RoundManager : MonoBehaviour
         int centerCol = board.height / 2;
 
         // Hiệu ứng thu nhỏ (scale xuống)
+        //Mathf.Max(board.width, board.height): Dung de xac dinh BAN KINH toi da cua SONG
+        //Vi du Level 8, 9. Neu khong xac dinh ma lay cai be hon thi SONG khong di het level duoc
         for (int distance = 0; distance <= Mathf.Max(board.width, board.height); distance++)
         {
             for (int row = 0; row < board.width; row++)
